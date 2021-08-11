@@ -3,22 +3,57 @@ const prizes = [
   {
     text: "Книга",
     color: "hsl(197 30% 43%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
   },
   {
     text: "Стикер Makers",
     color: "hsl(173 58% 39%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
   },
   {
     text: "Бесплатный урок",
     color: "hsl(43 74% 66%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
   },
   {
     text: "Чеклист",
     color: "hsl(27 87% 67%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
   },
   {
     text: "Видео по Python",
     color: "hsl(12 76% 61%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
+  },
+  {
+    text: "Туториал",
+    color: "hsl(12 76% 61%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
+  },
+  {
+    text: "Скидка",
+    color: "hsl(12 76% 61%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
+  },
+  {
+    text: "Вебинар",
+    color: "hsl(12 76% 61%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
+  },
+  {
+    text: "Гайд",
+    color: "hsl(12 76% 61%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
+  },
+  {
+    text: "Подкаст",
+    color: "hsl(12 76% 61%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
+  },
+  {
+    text: "Доступ в закрутю группу",
+    color: "hsl(12 76% 61%)",
+    link: '<a target="_blank" href="./assets/React_v_deystvii_2019_Tomas.pdf"  download="nameOfPdf" ><button class="form-btn-new-class"><i class="fas fa-download" style="margin-right: 10px;"></i>Скачать</button></a>'
   },
 ];
 
@@ -63,8 +98,8 @@ const createPrizeNodes = () => {
     spinner.insertAdjacentHTML(
       "beforeend",
       // текст при этом уже оформлен нужными стилями
-      `<li class="prize" data-reaction=${reaction} style="--rotate: ${rotation}deg">
-            <span class="text">${text}</span>
+      `<li class="prize prize-font" data-reaction=${reaction} style="--rotate: ${rotation}deg; ">
+            <span  class="text">${text}</span>
           </li>`
     );
   });
@@ -199,6 +234,8 @@ spinner.addEventListener("transitionend", () => {
 setupWheel();
 
 const openModal = (name, phone, prize) => {
+  let linkToDownload = prizes.filter(item => item.text === prize)
+  console.log(linkToDownload[0]?.link);
   $('.modalSecond').css('display', 'block')
   $('.modal-contentSecond').html('')
   $('.modal-contentSecond').append(`
@@ -210,6 +247,7 @@ const openModal = (name, phone, prize) => {
       <p>Ваше имя: ${name}</p>
       <p>Ваш номер: ${phone}</p>
       <p>Вы выиграли: ${prize}</p>
+        ${linkToDownload[0]?.link}
     </div>
   `)
 }
@@ -223,3 +261,4 @@ const startSendingData = (prize) => {
 $('body').on('click', '.closeSecond', () => {
   $('.modalSecond').css('display', 'none')
 })
+

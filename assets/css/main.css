@@ -44,6 +44,18 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin-ext');
 
+
+.navbar-brand{
+    align-self: flex-start;
+}
+.navbar-nav{
+    align-self: flex-start;
+}
+
+.icon{
+    margin-right: 10px;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
@@ -313,6 +325,14 @@ footer .subscribe .subscribe-form-2 .form-group {
     03. START HEADER STYLE
 ------------------------------*/
 
+.main-btn-intro{
+    /* border: 10px solid rgb(61, 130, 121); */
+    transition: 0.3s ease-in;
+}
+.main-btn-intro:hover{
+    /* border: 10px solid #fff; */
+}
+
 .foxapp-header {
     position: absolute;
     top: 50px;
@@ -472,6 +492,33 @@ footer .subscribe .subscribe-form-2 .form-group {
     }
 }
 
+.navbar-parent{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media all and (max-width: 389px){
+    .navbar-parent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .foxapp-header {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+    }
+    .navbar-brand{
+        align-self: center;
+    }
+}
+
 /*------------------------------
     03. End HEADER STYLE
 ------------------------------*/
@@ -498,7 +545,8 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 .slide .overlay-main-img{
     width: 100%;
-  position: relative;
+    /* max-width: 1000px; */
+    position: relative;
 }
 .slide .overlay-main-text{
     position: absolute;
@@ -516,7 +564,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     justify-content: center;
     margin: 0;
     align-items: center; */
-    max-width: 500px;
+    max-width: 700px;
 }
 
 .slide .main-video .video{
@@ -627,16 +675,16 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 
 
-.slide .leave-request{
-    /* position: absolute;
-    top: 70%;
-    left: 50%;
-    z-index: 200;
-    transform: translateX(-50%); */
-    margin-top: -450px;
-    margin-left: 50%;
-    transform: translateX(-50%);
+.leave-request{
     padding: 20px 60px;
+    background: rgb(39, 77, 90) !important;
+    color: #fff;
+}
+.leave-request:hover{
+    background: rgb(61, 130, 121) !important;
+}
+.leave-request:focus{
+    outline: none;
 }
 
 .play{
@@ -649,6 +697,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 .slide .content-bottom {
     padding-top: 150px;
+    padding-bottom: 20px;
     position: relative;
     z-index: 1;
 }
@@ -671,6 +720,15 @@ footer .subscribe .subscribe-form-2 .form-group {
 .slide .content-bottom p {
     color: #fff;
     max-width: 400px;
+}
+
+.disappear-at-768{
+    display: block;
+}
+
+.prize-font{
+    font-family: 'Lobster', cursive;
+    color: #fff !important;
 }
 
 @media (max-width: 1366px) {
@@ -705,7 +763,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 @media (max-width: 768px) {
     .slide .content-bottom h2 {
-        font-size: 55px;
+        /* font-size: 55px; */
         line-height: 60px;
     }
     .slide .main-video{
@@ -716,6 +774,26 @@ footer .subscribe .subscribe-form-2 .form-group {
         margin-left: 50%;
         transform: translateX(-50%);
         padding: 20px 60px;
+    }
+    .slide .overlay-main-text{
+        position: absolute;
+        top: 400px;
+        right: 50%;
+        transform: translateX(50%);
+        font-weight: bold;
+        text-align: right;
+        font-size: 30px;
+    }
+    .slide .btn-mini-text {
+        color: #fff;
+        max-width: 180px;
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+@media all and (max-width: 767px){
+    .disappear-at-768{
+        display: none;
     }
 }
 
@@ -733,6 +811,66 @@ footer .subscribe .subscribe-form-2 .form-group {
         text-align: center
     }
 }
+
+@media all and (max-width: 490px){
+    .slide .overlay-main-text{
+        position: absolute;
+        top: 350px;
+        right: 50%;
+        transform: translateX(50%);
+        font-weight: bold;
+        text-align: right;
+        font-size: 30px;
+    }
+}
+@media all and (max-width: 415px){
+    .slide .overlay-main-text{
+        position: absolute;
+        top: 300px;
+        right: 50%;
+        transform: translateX(50%);
+        font-weight: bold;
+        text-align: right;
+        font-size: 30px;
+    }
+    .btn-mini-text{
+        font-size: 20px;
+    }
+}
+@media all and (max-width: 385px){
+    .slide .overlay-main-text{
+        position: absolute;
+        top: 250px;
+        right: 50%;
+        transform: translateX(50%);
+        font-weight: bold;
+        text-align: right;
+        font-size: 30px;
+    }
+}
+@media all and (max-width: 323px){
+    .slide .overlay-main-text{
+        position: absolute;
+        top: 200px;
+        right: 50%;
+        transform: translateX(50%);
+        font-weight: bold;
+        text-align: right;
+        font-size: 30px;
+    }
+}
+@media all and (max-width: 313px){
+    .slide .overlay-main-text{
+        position: absolute;
+        top: 190px;
+        right: 50%;
+        transform: translateX(50%);
+        font-weight: bold;
+        text-align: right;
+        font-size: 30px;
+    }
+}
+
 @media all and (max-width: 350px){
     .slide .content-bottom h2 {
         font-size: 28px;
@@ -1097,7 +1235,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 }
 
 .clients-testimonial .testimonial-slider .item .client-testimonial {
-    padding: 3em;
+    padding: 1em;
     position: relative;
 }
 
@@ -1698,12 +1836,31 @@ footer .subscribe .subscribe-form-2 .form-group {
 ------------------------------*/
 
 .git-in-touch .gray-panel-contact{
-    max-height: 400px;
+    max-height: 430px;
     max-width: 400px;
     background-color: rgba(158, 158, 158, 0.1);
     padding: 30px;
     text-align: center;
+    margin-bottom: 20px;
     /* border: 2px solid rgba(158, 158, 158, 0.1); */
+}
+
+.form-btn-new-class{
+    border: none;
+    background-color: rgb(39, 77, 90);
+    color: #fff;
+    border-radius: 50px;
+    padding: 15px 45px;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: inline-block;
+    transition: 0.3s ease-in;
+}
+.form-btn-new-class:hover{
+    background: rgb(61, 130, 121) !important;
+}
+.form-btn-new-class:focus{
+    outline: none;
 }
 
 
@@ -1868,10 +2025,10 @@ footer .footer-widgets .widget ul li {
 }
 
 footer .footer-widgets .widget ul li a:hover {
-    color: rgb(159, 21, 161);
+    color: rgb(61, 130, 121);
 }
 footer .footer-widgets .widget .widget-li a:hover {
-    color: rgb(159, 21, 161);
+    color: rgb(61, 130, 121);
 }
 
 footer .footer-widgets .widget ul li span {
@@ -1998,6 +2155,10 @@ nav .pagination li a:hover {
 /*------------------------------
     23. START SIDEBAR 
 ------------------------------*/
+.form-main-title{
+    color: rgb(61, 130, 121);
+}
+
 aside.sidebar .gray-panel {
     background: rgba(158, 158, 158, 0.1);
     padding: 15px 30px;
@@ -2337,7 +2498,7 @@ aside.sidebar .tags ul li {
 
 @media all and (max-width: 511px) {
     .leave-request {
-        display: none;
+        /* display: none; */
         /* margin: 0 !important;
         position: absolute;
         top: 650px;
@@ -2349,4 +2510,27 @@ aside.sidebar .tags ul li {
         margin-top: -50px;
         padding-bottom: 50px;
     }
+}
+
+
+
+/* REVIEWS from begy with video */
+
+.iframe-parent {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
